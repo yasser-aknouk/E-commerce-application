@@ -1,0 +1,103 @@
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<style>
+/*
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+*/
+
+.navbar-brand { position: relative; z-index: 2; }
+
+.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; }
+
+.navbar .navbar-collapse { position: relative; }
+.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
+
+.navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
+.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
+.navbar.navbar-inverse .nav-collapse { background-color: #222; }
+.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
+.nav-collapse>li { float: right; }
+
+.btn.btn-circle { border-radius: 50px; }
+.btn.btn-outline { background-color: transparent; }
+.closeNav{position: relative; right: 50px;}
+@media screen and (max-width: 767px) {
+    .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; } 
+    
+    .navbar .nav-collapse { margin: 7.5px auto; padding: 0; }
+    .navbar .nav-collapse .navbar-form { margin: 0; }
+    .nav-collapse>li { float: none; }
+}
+</style>
+
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+   
+      
+        
+        
+        <!-- Second navbar for search -->
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+         
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand font-italic font-weight-bold" style="left: 20px;" href="/customer-home">E-SHOP</a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-3">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/customer-home">Home</a></li>
+                
+                {%if request.user.is_authenticated%}
+                
+                <li ><a href="/my-order">Orders</a></li>
+                <li ><a href="/my-profile">Profile</a></li>
+                  <li ><a href="/logout">Logout</a></li>
+                {%else%}
+                <li><a href="/customerlogin">Login </a></li>
+                <li><a href="/customersignup">Sign Up </a></li>
+                {%endif%}
+            
+              
+                <li><a href="/cart" role="button" > <span class="glyphicon glyphicon-shopping-cart"></span> {{ product_count_in_cart }} <span></span></a>
+
+                <li>
+                  <a class="btn btn-default btn-outline btn-circle "  data-toggle="collapse" href="#nav-collapse3" aria-expanded="false" aria-controls="nav-collapse3">Search</a>
+                </li>
+              </ul>
+              <div class="collapse nav navbar-nav nav-collapse " id="nav-collapse3">
+                <form class="navbar-form navbar-right" role="search" action="/search" method="get">
+                  <div class="form-group">
+                    <input  type="search" class="form-control" placeholder="Search" name="query" id="query" />
+                  </div>
+                  <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </form>
+              </div>
+            </div><!-- /.navbar-collapse -->
+       <!-- /.container -->
+        </nav><!-- /.navbar -->
+        
+        <!-- Second navbar for profile settings -->
+       
+  
+
+
+
